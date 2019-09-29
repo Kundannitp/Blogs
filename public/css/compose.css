@@ -1,0 +1,29 @@
+h1{
+    margin-left: 150px;
+    margin-bottom: 5px;
+}
+select{
+    margin-left: 150px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 70%;
+}
+textarea{
+    margin-left: 150px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+button{
+    margin-left: 150px;
+    border-radius: 10px;
+    background-color: #6bc5d2;
+    height: 35px;
+    font-size: 25px;
+}
+p{
+    margin-left: 150px;
+    margin-bottom: 2px;
+    font-size: 20px;
+
+}

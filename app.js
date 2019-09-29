@@ -36,7 +36,30 @@ app.post("/compose",function(req,res){
     linkto.push('/' + posttitledata);
     res.redirect('/');
 });
-
+app.get('/Day1',function(req,res){
+    res.render('post',{css:post,Title:posttitledata,posts:postsdata});
+});
+app.get('/Day2', function (req, res) {
+    res.render('post', {
+        css: 'post',
+        Title: posttitledata,
+        posts: postsdata
+    });
+});
+app.get('/Test', function (req, res) {
+    res.render('post', {
+        css: 'post',
+        Title: posttitledata,
+        posts: postsdata
+    });
+});
+app.get('/New Post', function (req, res) {
+    res.render('post', {
+        css: 'post',
+        Title: posttitledata,
+        posts: postsdata
+    });
+});
 app.listen(process.env.PORT || 4000, function () {
     console.log("app started at 4000 port");
 });

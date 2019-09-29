@@ -1,0 +1,8 @@
+<%- include("Header") -%>
+
+<% for(var i=0;i<heading.length;i++){ %>
+    <h1 class="headingpost"><%= heading[i] %></h1>
+    <p class="parapost"><%= posts[i] %></p>
+    <a href="<%= route[i] %>" class="ahome">read more</a>
+<% } %>
+<%- include("footer") -%>

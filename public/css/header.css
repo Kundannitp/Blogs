@@ -1,0 +1,38 @@
+.headerdiv {
+    width: 100%;
+    height: 90px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    background-color:#e5e5e5;
+}
+
+.da {
+    display: inline-block;
+    color: #b5525c;
+}
+
+.div1 {
+    font-size: 25px;
+    margin-left: 150px;
+    margin-top: 25px;
+}
+
+.div2 {
+    font-size: 20px;
+    margin-left: 45%;
+    margin-right: 10px;
+}
+
+.div3 {
+    font-size: 20px;
+}
+
+.div4 {
+    width: 15%;
+    font-size: 20px;
+    margin-left: 10px;
+}
+a{
+    text-decoration: none;
+    color: #b5525c;
+}

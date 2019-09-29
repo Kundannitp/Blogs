@@ -1,0 +1,16 @@
+<%- include('header') -%>
+
+<h1>Compose</h1>
+<form action="/compose" method="POST">
+<p>Title</p>
+<select name="posttitles">
+    <option value="Day1" >Day1</option>
+    <option value="Day2">Day2</option>
+    <option value="Test">test</option>
+    <option value="New Post">New Posts</option>
+</select>
+<br>
+<textarea name="posts1" cols="150" rows="10"></textarea><br>
+<button type="submit">Post</button>
+</form>
+<%- include('footer') -%>
