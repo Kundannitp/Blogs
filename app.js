@@ -1,5 +1,20 @@
 const express=require("express");
 const bodyParser=require("body-parser");
+const mongoose =require("mongoose");
+
+mongoose.connect("mongodb+srv://Kundan2000:Kundan2000@@k2j-ebqyx.mongodb.net/BlogsDB", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const BlogsSchema=new mongoose.Schema({
+    posttitle:String,
+    post:String,
+    linkto:String
+});
+
+var Blogs1=mongoose.model('Blogs',BlogsSchema);
+
 const app=express();
 var posts=new Array();
 var posttitle=new Array();
@@ -15,6 +30,19 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+Blogs1.find(function (err, blogsarr) {
+    if (err) {
+        console.log(err);
+    } else {
+        for (var i = 0; i < blogsarr.length; i++) {
+            posttitle.push(blogsarr[i].posttitle);
+            posts.push(blogsarr[i].post);
+            linkto.push(blogsarr[i].linkto);
+        }
+    }
+});
+
 app.get("/",function(req,res){
     res.render("home", { css: 'home', heading:posttitle,posts:posts,route:linkto});
 });
@@ -30,10 +58,17 @@ app.get("/compose",function(req,res){
 app.post("/compose",function(req,res){
     posttitledata=req.body.posttitles;
     postsdata=req.body.posts1;
-    console.log(posttitledata);
+    const blog=new Blogs1({
+        posttitle:posttitledata,
+        post:postsdata,
+        linkto: '/' + posttitledata
+    });
+    blog.save();
+
     posttitle.push(posttitledata);
     posts.push(postsdata);
     linkto.push('/' + posttitledata);
+
     res.redirect('/');
 });
 app.get('/Day1',function(req,res){
